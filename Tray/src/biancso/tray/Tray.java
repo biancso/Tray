@@ -26,13 +26,11 @@ public class Tray {
 
 	// INIT
 	public void init(Image image) throws AWTException {
-		tray = new TrayIcon(image);
-		SystemTray.getSystemTray().add(tray);
+		init(image, "", new PopupMenu());
 	}
 
 	public void init(Image image, String tooltip) throws AWTException {
-		tray = new TrayIcon(image, tooltip);
-		SystemTray.getSystemTray().add(tray);
+		init(image, tooltip, new PopupMenu());
 	}
 
 	public void init(Image image, String tooltip, PopupMenu popup) throws AWTException {
@@ -85,6 +83,10 @@ public class Tray {
 	}
 
 	public void attachActionListener(ActionListener l, MenuItem mnuItem) {
-		
+
+	}
+
+	public void exitTray() {
+		SystemTray.getSystemTray().remove(tray);
 	}
 }
