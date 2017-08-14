@@ -24,7 +24,6 @@ public class Tray {
 		return Instance.tray;
 	}
 
-	// INIT
 	public void init(Image image) throws AWTException {
 		init(image, "", new PopupMenu());
 	}
@@ -80,10 +79,6 @@ public class Tray {
 
 	public void detachActionListener(ActionListener l) {
 		getPopupMenu().removeActionListener(l);
-	}
-
-	public void attachActionListener(ActionListener l, MenuItem mnuItem) {
-
 	}
 
 	public void exitTray() {
