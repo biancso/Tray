@@ -61,6 +61,15 @@ public class Tray {
 		return getPopupMenu().getItem(i);
 	}
 
+	public MenuItem getMenuItem(String label) {
+		MenuItem mnu;
+		for (int i = 0; i < getPopupMenu().getItemCount(); i++) {
+			if ((mnu = getPopupMenu().getItem(i)).getLabel().equals(label))
+				return mnu;
+		}
+		return null;
+	}
+
 	public void addSeparator() {
 		getPopupMenu().addSeparator();
 	}
